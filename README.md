@@ -26,6 +26,7 @@ There are 21,597 houses included in this data and the prices range from $78,000 
 ## Exploratory Data Analysis
 ### Scatter Plot Matrix
 ![alt text](Images/Scatter%20Matrix%20Plot.png)
+
 The plot above gives me a lot of information. I can see which variables, with price on the y axis, may have linear relationships with price. 
 I can also look on the diagonal and see histograms showing the distribution for each of the variables.
 I can see that variables like grade are very close to normally distributed
@@ -35,15 +36,18 @@ On initial look, the variables with potential linear relationships with price ar
 ### Multicollinearity 
 ![alt text](Images/Multicollinearity%20Heatmap.png)
 ![alt text](Images/Multicollinearity%20Table.png)
+
 The lighter regions of the heatmap above indicate which features are the most correlated. The table also helps to show which features are correlated. It looks like sqft_living, sqft_above, and grade are the most correlated.
 
 ### Continuous Variables
 Two variables I wanted to highlight and check for linearity in my analysis were sqft_living and sqft_lot. The two graphs below indicate potential linear relationships between price and the two variables. I can also see that for both variables their distributions are skewed to the right
 
 Home Size Vs. Price
+
 ![alt text](Images/Size%20of%20Home%20Vs%20Price.png)
 
 Lot Size Vs. Price
+
 ![alt text](Images/Lot%20size%20vs%20price.png)
 
 ### Categorical Variables
@@ -55,8 +59,10 @@ For my analysis I wanted to see how variables like grade, number of bedrooms, zi
 
 ## Baseline Model 
 Snapshot of the first model run:
+
 ![alt text](Images/First%20Model%20Run%201.png)
 ![alt text](Images/First%20Model%20Run%202.png)
+
 The first run of the model resulted in  an R-squared value of .83 and an RMSE of 151374.63. It is clear that despite the high R-squared value, the corresponding high RMSE and the features with high p-values make the model not a good fit.
 
 ## Iterative Process
@@ -76,16 +82,20 @@ The first run of the model resulted in  an R-squared value of .83 and an RMSE of
 
 ## Final Model 
 Snapshot of the final model run:
+
 ![alt text](Images/Final%20Model%201.png)
 ![alt text](Images/Final%20Model%202.png)
+
 The final (log-transformed) RMSE of the model is .302 The final R-squared is .670. Though the R-squared is lower than the original model, all the feature p-values are 0 and the RMSE is relatively low.
 
 ## Interpretation
 ### Linear Model Assumptions
 ![alt text](Images/qqplot.png)
+
 Due to the log transformations, the data in the model follow the normality line relatively well, although not perfectly
 
 ![alt text](Images/Homoscedasticity.png)
+
 Homoscedasticity is not perfectly met with this data. This indicates that a linear regression model may not be the best model for the data
 
 ### R-squared, RMSE, and Coefficients
